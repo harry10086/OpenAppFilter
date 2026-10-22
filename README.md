@@ -51,7 +51,5 @@ If you encounter some issues during installation or usage, you can join the grou
 - If you undertake derivative development based on OAF, you must adhere to the GPL 2.0 license and retain references to the OAF repository or website information.
 - If a company wishes to use this software, please contact the author for authorization.
 
-## Star
-If you find this project helpful, please give it a star.  
-[![Stargazers over time](https://starchart.cc/destan19/OpenAppFilter.svg?variant=adaptive)](https://starchart.cc/destan19/OpenAppFilter)
-
+## Versions
+* V7.0.2 ：新增了**自定义特征库批量导入/导出**功能.

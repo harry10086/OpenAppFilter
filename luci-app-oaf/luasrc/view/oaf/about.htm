@@ -1,6 +1,16 @@
 <%+header%>
 <link rel="stylesheet" href="<%=resource%>/oaf/css/common.css">
 
+<%
+local nixio = require "nixio"
+local ver = nixio.fs.readfile("/etc/oaf_version")
+if ver then
+    ver = ver:gsub("^%s*(.-)%s*$", "%1")
+else
+    ver = "7.0.1"
+end
+%>
+
 <div class="oaf-about-page">
     <section class="oaf-about-card">
         <div class="oaf-about-brand">OpenAppFilter</div>
@@ -10,8 +20,16 @@
 
         <div class="oaf-about-info">
             <div class="oaf-about-row">
+                <div class="oaf-about-label"><%:Version%></div>
+                <div class="oaf-about-value">v<%=ver%></div>
+            </div>
+            <div class="oaf-about-row">
                 <div class="oaf-about-label"><%:Author%></div>
                 <div class="oaf-about-value">destan19(TT)</div>
+            </div>
+            <div class="oaf-about-row">
+                <div class="oaf-about-label"><%:Plugin Modifier%></div>
+                <div class="oaf-about-value">Harry</div>
             </div>
             <div class="oaf-about-row">
                 <div class="oaf-about-label">OAF</div>

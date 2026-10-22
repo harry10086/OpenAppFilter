@@ -1959,3 +1959,40 @@ msgstr "无效的Key，请通过官网获取正确的Key，并开通高级版特
 
 msgid "No data"
 msgstr "暂无数据"
+
+msgid "Export Config"
+msgstr "导出配置"
+
+msgid "Import Config"
+msgstr "导入配置"
+
+msgid "Export custom_feature.cfg"
+msgstr "导出 custom_feature.cfg"
+
+msgid "Import custom_feature.cfg"
+msgstr "导入 custom_feature.cfg"
+
+msgid "Configuration imported successfully"
+msgstr "配置导入成功"
+
+msgid "Import failed"
+msgstr "导入失败"
+
+msgid "No valid custom application rules found in the file"
+msgstr "文件中没有发现有效的自定义应用规则"
+
+msgid "Parsed {count} rules. Overwrite existing configuration?"
+msgstr "解析到 {count} 条规则，是否覆盖现有配置？"
+
+msgid "Line"
+msgstr "第"
+
+msgid "Invalid format, missing :[...] wrapper"
+msgstr "格式错误，缺少 :[...] 包裹"
+
+msgid "Protocol must be tcp or udp"
+msgstr "协议必须为 tcp 或 udp"
+
+msgid "Plugin Modifier"
+msgstr "插件修改作者"
+
