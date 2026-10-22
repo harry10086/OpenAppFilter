@@ -127,19 +127,6 @@ function download_custom_feature()
 	http.prepare_content("text/plain; charset=utf-8")
 	http.header("Content-Disposition", 'attachment; filename="custom_feature.cfg"')
 
-	if fs.access(path) then
-		local file = io.open(path, "r")
-		if file then
-			while true do
-				local chunk = file:read(4096)
-				if not chunk then break end
-				http.write(chunk)
-			end
-			file:close()
-			return
-		end
-	end
-
 	local template = [[# OpenAppFilter Custom Feature Configuration
 # Format: <appid>~<name>:[<proto>;<sport>;<dport>;<domain>;<uri>;<payload>;]
 # Category ID (appid / 1000): 1-Chat, 2-Game, 3-Video, 4-Shopping, 5-Music
@@ -147,7 +134,23 @@ function download_custom_feature()
 # Example:
 # 1900~MyChat:[tcp;;443;chat.example.com;;]
 # 2900~MyGame:[udp;;3000-4000;game.example.com;;,tcp;;8080;game.example.com;;]
+
 ]]
-	http.write(template)
+
+	local content = ""
+	if fs.access(path) then
+		local file = io.open(path, "r")
+		if file then
+			content = file:read("*a") or ""
+			file:close()
+		end
+	end
+
+	if not content:find("# OpenAppFilter") and not content:find("# Format:") then
+		http.write(template)
+	end
+	if #content > 0 then
+		http.write(content)
+	end
 end
 

@@ -741,7 +741,7 @@ static int config_read_file(const char *path, custom_config_t *config,
             line[--length] = '\0';
         if (!line[0])
             continue;
-        if (!strncmp(line, "#class ", 7))
+        if (line[0] == '#')
             continue;
         if (parse_app_line(line, config, error, error_len) < 0)
             goto failed;
